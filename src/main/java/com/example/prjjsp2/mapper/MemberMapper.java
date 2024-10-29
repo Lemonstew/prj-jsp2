@@ -21,5 +21,5 @@ public interface MemberMapper {
             WHERE id = #{id}
                 AND password = #{password}
             """)
-    String logIn(Member member);
+    Member logIn(Member member);
 }

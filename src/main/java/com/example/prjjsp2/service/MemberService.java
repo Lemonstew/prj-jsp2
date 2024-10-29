@@ -19,7 +19,7 @@ public class MemberService {
         mapper.newMember(member);
     }
 
-    public String enter(Member member) {
+    public Member enter(Member member) {
         return mapper.logIn(member);
     }
 }

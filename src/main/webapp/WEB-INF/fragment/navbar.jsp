@@ -101,7 +101,13 @@
                     <c:if test="${not loggedIn}">
                         <li class="nav-item">
                             <a class="navbar-brand" href="/member/login">
-                                로그인 / 회원가입
+                                로그인
+                            </a>
+                        </li>
+                        &nbsp;
+                        <li class="nav-item">
+                            <a class="navbar-brand" href="/member/signup">
+                                회원가입
                             </a>
                         </li>
                     </c:if>
@@ -111,6 +117,7 @@
                                 마이페이지
                             </a>
                         </li>
+                        &nbsp;
                         <li class="nav-item">
                             <a href="/member/logout" class="navbar-brand">
                                 로그아웃

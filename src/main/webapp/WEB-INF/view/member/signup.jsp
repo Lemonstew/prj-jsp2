@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Title</title>
+    <title>보드게임 아지트 | 회원가입</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -21,6 +21,7 @@
     <div class="row justify-content-center">
         <div class="col-12 col-md-9 col-lg-6">
             <h2 class="my-3">회원가입</h2>
+            <hr>
             <form id="signup1" method="post">
                 <div class="mb-3">
                     <label class="form-label" for="inputId2">아이디</label>
@@ -39,9 +40,9 @@
                     <textarea name="description" id="inputDescription1" cols="30" rows="10"
                               class="form-control"></textarea>
                 </div>
-                <button class="btn btn-primary">가입하기</button>
             </form>
-            <div>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button form="signup1" class="btn btn-primary">가입하기</button>
                 <button class="btn btn-outline-danger">
                     <a class="navbar-brand" href="/member/login">
                         취소

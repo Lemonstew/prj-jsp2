@@ -16,6 +16,4 @@ VALUES ('김태민', '0530', '짝태'),
        ('김영웅', '0703', '웅덩이');
 
 SELECT *
-FROM member
-WHERE id = '김태민'
-  AND password = '0530'
+FROM member;

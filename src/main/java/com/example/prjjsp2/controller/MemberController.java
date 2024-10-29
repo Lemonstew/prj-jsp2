@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.util.Map;
+
 @Controller
 @RequestMapping("member")
 @RequiredArgsConstructor
@@ -26,7 +28,7 @@ public class MemberController {
     public String loginProcess(Member member,
                                RedirectAttributes rttr,
                                HttpSession session) {
-        String a = service.enter(member);
+        Member a = service.enter(member);
 
         if (a == null) {
             rttr.addFlashAttribute("message", "아이디나 비밀번호를 확인해주세요.");
@@ -54,5 +56,15 @@ public class MemberController {
         session.invalidate();
 
         return "redirect:/home/main";
+    }
+
+    @GetMapping("mypage")
+    public void mypage() {
+
+    }
+
+    @GetMapping("myinfo")
+    public void myinfo(Member member) {
+        Map.of("member", member);
     }
 }
