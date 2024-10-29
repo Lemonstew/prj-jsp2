@@ -13,4 +13,9 @@ INSERT INTO member
     (id, password, nick_name)
 VALUES ('김태민', '0530', '짝태'),
        ('신형철', '1107', '백자형철'),
-       ('김영웅', '0703', '웅덩이')
+       ('김영웅', '0703', '웅덩이');
+
+SELECT *
+FROM member
+WHERE id = '김태민'
+  AND password = '0530'

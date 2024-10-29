@@ -1,5 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
+
+<c:set value="${not empty sessionScope.loggedInMember}" var="loggedIn"/>
+
 <div class="mb-4">
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container">
@@ -93,21 +96,29 @@
                 </ul>
             </div>
 
-            <c:if test="${not loggedIn}">
-                <a class="navbar-brand" href="/member/login">
-                    <h5>
-                        로그인 / 회원가입
-                    </h5>
-                </a>
-            </c:if>
-
-            <c:if test="${loggedIn}">
-                <h5>${nickName}님, 반갑습니다!</h5>
-                <a href="/member/mypage" class="navbar-brand">
-                    마이페이지
-                </a>
-            </c:if>
-
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <c:if test="${not loggedIn}">
+                        <li class="nav-item">
+                            <a class="navbar-brand" href="/member/login">
+                                로그인 / 회원가입
+                            </a>
+                        </li>
+                    </c:if>
+                    <c:if test="${loggedIn}">
+                        <li class="nav-item">
+                            <a href="/member/mypage" class="navbar-brand">
+                                마이페이지
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/member/logout" class="navbar-brand">
+                                로그아웃
+                            </a>
+                        </li>
+                    </c:if>
+                </ul>
+            </div>
         </div>
     </nav>
 </div>
