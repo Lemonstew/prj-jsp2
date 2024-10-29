@@ -27,7 +27,7 @@
                 <div class="mb-3">본문
                     <textarea name="" id="" cols="30" rows="10" class="form-control"></textarea>
                 </div>
-                <button>작성</button>
+                <button class="btn btn-primary">작성</button>
             </form>
         </div>
     </div>
