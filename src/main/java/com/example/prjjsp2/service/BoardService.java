@@ -15,6 +15,11 @@ public class BoardService {
     private final BoardMapper mapper;
 
     public void add(Board board, Member member) {
+
         mapper.insert(board, member);
+
+        System.out.println(board);
+        System.out.println(member);
     }
+
 }

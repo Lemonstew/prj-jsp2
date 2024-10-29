@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
 @Controller
 @RequestMapping("board")
@@ -37,7 +38,7 @@ public class BoardController {
     }
 
     @PostMapping("new")
-    public String newBoard(Board board, Member member) {
+    public String newBoard(Board board, @SessionAttribute("loggedInMember") Member member) {
 
         service.add(board, member);
 

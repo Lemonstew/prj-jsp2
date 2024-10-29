@@ -20,12 +20,15 @@
     <div class="row justify-content-center">
         <div class="col-12 col-md-9 col-lg-6">
             <h2 class="my-3">새 게시물 작성</h2>
+            <hr>
             <form method="post">
-                <div class="mb-3">제목
-                    <input type="text" class="form-control">
+                <div class="mb-3">
+                    <label for="inputTitle1" class="form-label">제목</label>
+                    <input name="title" type="text" class="form-control" id="inputTitle1">
                 </div>
-                <div class="mb-3">본문
-                    <textarea name="" id="" cols="30" rows="10" class="form-control"></textarea>
+                <div class="mb-3">
+                    <label for="inputText1" class="form-label">본문</label>
+                    <textarea name="content" id="inputText1" cols="30" rows="10" class="form-control"></textarea>
                 </div>
                 <button class="btn btn-primary">작성</button>
             </form>
