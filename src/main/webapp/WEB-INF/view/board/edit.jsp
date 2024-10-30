@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>보드게임 아지트 | 랭킹</title>
+    <title>보드게임 아지트 | 글 수정</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -14,6 +14,35 @@
 <body>
 
 <c:import url="/WEB-INF/fragment/navbar.jsp"/>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-9 col-lg-6">
+            <form action="/board/edit" id="listEdit" method="post">
+                <h2>${board.id}번 게시글 수정하기</h2>
+                <hr>
+                <div>
+                    <label for="" class="form-label">제목</label>
+                    <input class="form-control" type="text" value="${board.title}">
+                </div>
+                <div>
+                    <label for="" class="form-label">본문</label>
+                    <textarea class="form-control" id="" cols="30" rows="10">${board.content}</textarea>
+                </div>
+            </form>
+            <div>
+                <a href="/board/view?number=${board.id}" class="btn btn-secondary">
+                    <i class="fa-regular fa-circle-xmark"></i>
+                    취소
+                </a>
+                <button form="listEdit" class="btn btn-primary">
+                    <i class="fa-regular fa-pen-to-square"></i>
+                    수정
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"

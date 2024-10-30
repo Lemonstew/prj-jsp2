@@ -13,9 +13,8 @@
 </head>
 <body>
 
-<c:import url="/WEB-INF/fragment/navbar.jsp">
-
-</c:import>
+<c:import url="/WEB-INF/fragment/navbar.jsp"/>
+<c:set value="${sessionScope.loggedInMember.nickName == board.writer}" var="same"/>
 
 <div class="container">
     <div class="row justify-content-center">
@@ -38,6 +37,19 @@
                 <label for="" class="form-label">작성일시</label>
                 <input class="form-control" type="text" value="${board.inserted}" readonly>
             </div>
+            <br>
+            <c:if test="${same}">
+                <div>
+                    <a href="/board/delete?number=${board.id}" class="btn btn-danger">
+                        <i class="fa-regular fa-circle-xmark"></i>
+                        삭제
+                    </a>
+                    <a href="/board/edit?number=${board.id}" class="btn btn-primary">
+                        <i class="fa-regular fa-pen-to-square"></i>
+                        수정
+                    </a>
+                </div>
+            </c:if>
         </div>
     </div>
 </div>

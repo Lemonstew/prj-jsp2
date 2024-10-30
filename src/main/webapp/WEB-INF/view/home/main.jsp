@@ -13,9 +13,7 @@
 </head>
 <body>
 
-<c:import url="/WEB-INF/fragment/navbar.jsp">
-
-</c:import>
+<c:import url="/WEB-INF/fragment/navbar.jsp"/>
 
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"

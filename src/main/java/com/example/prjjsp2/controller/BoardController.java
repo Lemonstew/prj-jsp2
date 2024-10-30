@@ -47,9 +47,6 @@ public class BoardController {
                                   RedirectAttributes rttr,
                                   @SessionAttribute("loggedInMember") Member member) {
 
-
-        System.out.println(board);
-
         service.add(board, member);
         rttr.addAttribute("number", board.getId());
 
@@ -58,10 +55,26 @@ public class BoardController {
 
     @GetMapping("view")
     public void viewBoard(Integer number, Model model) {
+
         Board board = service.show(number);
+        model.addAttribute("board", board);
+    }
+
+    @GetMapping("edit")
+    public void editBoard(Integer number, Model model) {
+        Board board = service.show(number);
+        model.addAttribute("board", board);
+    }
+
+    @PostMapping("edit")
+    public String editBoardProcess(RedirectAttributes rttr,
+                                   Board board,
+                                   @SessionAttribute("loggedInMember") Member member) {
 
         System.out.println(board);
-        model.addAttribute("board", board);
+        service.rewrite(board, member);
+        rttr.addAttribute("number", board.getId());
+        return "redirect:/board/view";
     }
 
 }

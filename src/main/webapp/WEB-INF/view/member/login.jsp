@@ -13,9 +13,8 @@
 </head>
 <body>
 
-<c:import url="/WEB-INF/fragment/navbar.jsp">
+<c:import url="/WEB-INF/fragment/navbar.jsp"/>
 
-</c:import>
 
 <div class="container">
     <div class="row justify-content-center">

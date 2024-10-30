@@ -2,10 +2,7 @@ package com.example.prjjsp2.mapper;
 
 import com.example.prjjsp2.dto.Board;
 import com.example.prjjsp2.dto.Member;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Options;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -41,4 +38,13 @@ public interface BoardMapper {
             ORDER BY id DESC
             """)
     List<Board> see();
+
+    @Update("""
+            UPDATE board
+            SET title=#{board.title},
+                content=#{board.content},
+                inserted=#{board.inserted}
+            WHERE id=#{board.id}
+            """)
+    int update(Board board, Member member);
 }
