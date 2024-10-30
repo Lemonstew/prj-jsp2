@@ -16,7 +16,7 @@ public interface MemberMapper {
     int newMember(Member member);
 
     @Select("""
-            SELECT id, password
+            SELECT *
             FROM member
             WHERE id = #{id}
                 AND password = #{password}

@@ -15,11 +15,16 @@ public class BoardService {
     private final BoardMapper mapper;
 
     public void add(Board board, Member member) {
-
+        System.out.println(member);
         mapper.insert(board, member);
 
-        System.out.println(board);
-        System.out.println(member);
     }
+
+    public Board show(Integer number) {
+
+        System.out.println(mapper.read(number));
+        return mapper.read(number);
+    }
+
 
 }

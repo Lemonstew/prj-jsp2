@@ -17,6 +17,30 @@
 
 </c:import>
 
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-9 col-lg-6">
+            <h2>${board.id}번 게시글 보기</h2>
+            <hr>
+            <div>
+                <label for="" class="form-label">제목</label>
+                <input class="form-control" type="text" value="${board.title}" readonly>
+            </div>
+            <div>
+                <label for="" class="form-label">본문</label>
+                <textarea class="form-control" id="" cols="30" rows="10" readonly>${board.content}</textarea>
+            </div>
+            <div>
+                <label for="" class="form-label">작성자</label>
+                <input class="form-control" type="text" name="writer" value="${board.writer}" readonly>
+            </div>
+            <div>
+                <label for="" class="form-label">작성일시</label>
+                <input class="form-control" type="text" value="${board.inserted}" readonly>
+            </div>
+        </div>
+    </div>
+</div>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>
