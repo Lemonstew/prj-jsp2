@@ -7,6 +7,8 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Select;
 
+import java.util.List;
+
 @Mapper
 public interface BoardMapper {
     @Insert("""
@@ -29,4 +31,14 @@ public interface BoardMapper {
             WHERE b.number = #{number}
             """)
     Board read(Integer number);
+
+    @Select("""
+            SELECT number id,
+                   title,
+                   writer,
+                   inserted
+            FROM board
+            ORDER BY id DESC
+            """)
+    List<Board> see();
 }

@@ -28,3 +28,9 @@ INSERT INTO board
     (number, title, content, writer, inserted)
 VALUES (1, '듄 아라키스 전쟁', '사고싶다', '레몬찌개', '2024-10-30 09:34:07'),
        (2, '듄 봉기', '이것도 사고싶다', '레몬찌개', '2024-10-30 09:38:04');
+
+SELECT number id,
+       title,
+       writer,
+       inserted
+FROM board;

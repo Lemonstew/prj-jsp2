@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("board")
 @RequiredArgsConstructor
@@ -20,8 +22,9 @@ public class BoardController {
     private final BoardService service;
 
     @GetMapping("list")
-    public void board() {
-        
+    public void board(Model model) {
+        List<Board> board = service.listup();
+        model.addAttribute("board", board);
     }
 
     @GetMapping("qna")

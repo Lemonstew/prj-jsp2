@@ -17,6 +17,30 @@
 
 </c:import>
 
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-9 ">
+            <br>
+            <h2 class="justify">자유게시판</h2>
+            <hr>
+            <%--            게시물 번호, 제목, 글쓴이, 작성시간--%>
+            <c:forEach items="${board}" var="board">
+                <form action="" method="post">
+                    <div>
+                            ${board.id}
+                        <a class="navbar-brand" href="/board/view?number=${board.id}">
+                                ${board.title}
+                        </a>
+                            ${board.writer}
+                            ${board.inserted}
+                    </div>
+                </form>
+            </c:forEach>
+        </div>
+    </div>
+</div>
+
+
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>
