@@ -19,23 +19,41 @@
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-12 col-md-9 ">
+        <div class="col-12 col-md-9">
             <br>
             <h2 class="justify">자유게시판</h2>
             <hr>
             <%--            게시물 번호, 제목, 글쓴이, 작성시간--%>
-            <c:forEach items="${board}" var="board">
-                <form action="" method="post">
-                    <div>
-                            ${board.id}
-                        <a class="navbar-brand" href="/board/view?number=${board.id}">
-                                ${board.title}
-                        </a>
-                            ${board.writer}
-                            ${board.inserted}
-                    </div>
-                </form>
-            </c:forEach>
+            <table class="col-12 col-md-12">
+                <thead>
+                <tr>
+                    <th>번호</th>
+                    <th>제목</th>
+                    <th>작성자</th>
+                    <th>작성일자</th>
+                </tr>
+                </thead>
+                <tbody>
+                <c:forEach items="${board}" var="board">
+                    <tr>
+                        <td>
+                                ${board.id}
+                        </td>
+                        <td>
+                            <a class="navbar-brand" href="/board/view?number=${board.id}">
+                                    ${board.title}
+                            </a>
+                        </td>
+                        <td>
+                                ${board.writer}
+                        </td>
+                        <td>
+                                ${board.inserted}
+                        </td>
+                    </tr>
+                </c:forEach>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
